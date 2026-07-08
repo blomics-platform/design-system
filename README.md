@@ -1,5 +1,9 @@
 # @blomics-platform/design-system
 
+[![npm version](https://img.shields.io/npm/v/@blomics-platform/design-system.svg)](https://www.npmjs.com/package/@blomics-platform/design-system)
+[![license](https://img.shields.io/npm/l/@blomics-platform/design-system.svg)](./LICENSE)
+[![node](https://img.shields.io/node/v/@blomics-platform/design-system.svg)](https://nodejs.org)
+
 Untitled UI 컬러 토큰 **제너레이터** for Tailwind v4.
 설치 → `ds init`로 두 입력 파일(`tokens.json` + `design.config.json`)을 프로젝트에 스캐폴드 → **brand 램프(25~900)만 채우고** → `ds build` → 당신의 프로젝트 안에 `theme.css`(프리미티브 `@theme` + 역할/유틸/alpha `:root` + `@utility`)와 타입드 `tokens.ts`(+ `.d.ts`, `.manifest.json`)가 생성된다.
 
