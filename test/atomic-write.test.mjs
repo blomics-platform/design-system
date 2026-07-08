@@ -1,5 +1,5 @@
 import { test } from "node:test"; import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, existsSync, readdirSync } from "node:fs";
+import { mkdtempSync, readFileSync, existsSync, readdirSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os"; import { join } from "node:path";
 import { atomicWrite, diffOutputs } from "../src/atomic-write.mjs";
 const CONFIG = { output: { css: "dist/theme.css", ts: "dist/tokens.ts", dts: "dist/tokens.d.ts", manifest: "dist/tokens.manifest.json" } };
@@ -22,6 +22,20 @@ test("atomicWrite overwrites existing dist and leaves no temp/backup dirs", () =
 test("atomicWrite creates dist when absent", () => {
   const dir = stage(); assert.ok(!existsSync(join(dir, "dist")));
   atomicWrite(OUT, CONFIG, dir); assert.ok(existsSync(join(dir, "dist")));
+});
+test("atomicWrite does NOT delete sibling files in the output dir (data-loss regression)", () => {
+  // output 을 다른 소스가 있는 디렉토리(예: src/app)로 지정한 경우를 재현.
+  const dir = stage();
+  const shared = { output: { css: "app/theme.css", ts: "app/tokens.ts", dts: "app/tokens.d.ts", manifest: "app/tokens.manifest.json" } };
+  mkdirSync(join(dir, "app/community"), { recursive: true });
+  writeFileSync(join(dir, "app/globals.css"), "SIBLING-CSS");
+  writeFileSync(join(dir, "app/community/page.tsx"), "SIBLING-ROUTE");
+  atomicWrite(OUT, shared, dir);
+  // 산출물은 정상 기록
+  assert.equal(readFileSync(join(dir, "app/theme.css"), "utf8"), "/*css*/");
+  // 형제 파일/디렉토리는 반드시 보존 (이전 디렉토리 스왑 방식은 이들을 삭제했음)
+  assert.equal(readFileSync(join(dir, "app/globals.css"), "utf8"), "SIBLING-CSS");
+  assert.equal(readFileSync(join(dir, "app/community/page.tsx"), "utf8"), "SIBLING-ROUTE");
 });
 test("diffOutputs returns [] when on-disk matches in-memory", () => {
   const dir = stage(); atomicWrite(OUT, CONFIG, dir);
