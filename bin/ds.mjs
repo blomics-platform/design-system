@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { pathToFileURL, fileURLToPath } from "node:url";
-import { copyFileSync, existsSync } from "node:fs";
+import { copyFileSync, existsSync, realpathSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { loadInputs } from "../src/load.mjs";
 import { expandScales } from "../src/scale-gen.mjs";
@@ -75,4 +75,9 @@ export function buildCli(argv, cwd = process.cwd()) {
   if (parsed.subcommand === "init") return runInit(parsed, cwd);
   return runBuild(parsed, cwd);
 }
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) process.exit(buildCli(process.argv.slice(2)));
+// npm links a package's bin as a symlink in node_modules/.bin. Node resolves
+// symlinks for import.meta.url but NOT for process.argv[1], so comparing them
+// raw makes this guard false on every installed invocation (`npx ds …`), and the
+// CLI silently no-ops. Resolve argv[1] through realpath before comparing.
+const invokedHref = process.argv[1] ? pathToFileURL(realpathSync(process.argv[1])).href : "";
+if (import.meta.url === invokedHref) process.exit(buildCli(process.argv.slice(2)));
