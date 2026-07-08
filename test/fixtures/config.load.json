@@ -1,0 +1,1 @@
+{ "classPrefix": "", "darkSelector": "[data-gnb-theme=\"dark\"]", "darkVariantName": "dark", "scaleOutput": "hex", "output": { "css": "dist/theme.css", "ts": "dist/tokens.ts", "dts": "dist/tokens.d.ts", "manifest": "dist/tokens.manifest.json" } }

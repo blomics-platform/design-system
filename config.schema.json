@@ -1,0 +1,17 @@
+{
+  "$id": "https://blomics.dev/design-system/config.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["classPrefix", "darkSelector", "darkVariantName", "output"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "classPrefix": { "type": "string" },
+    "darkSelector": { "type": "string" },
+    "darkVariantName": { "type": "string" },
+    "scaleOutput": { "type": "string", "enum": ["oklch", "hex"], "default": "hex" },
+    "cssLayering": { "type": "string", "enum": ["plain", "inline-passthrough"], "default": "plain" },
+    "output": { "type": "object", "required": ["css", "ts", "dts", "manifest"], "additionalProperties": false, "properties": { "css": { "type": "string" }, "ts": { "type": "string" }, "dts": { "type": "string" }, "manifest": { "type": "string" } } },
+    "baseColorEmit": { "type": "object", "additionalProperties": { "type": "boolean" } }
+  }
+}

@@ -1,0 +1,491 @@
+
+===== PAGE 1/1 =====
+Foundations -> Colors
+Color utility variables
+Color variables (Figmaˇs version of design tokens) store reusable values that can be applied to all kinds of design 
+properties including fill and stroke colors. They help save time and effort when managing design systems by acting 
+as a ˝s
+ingle source of truth˛  while allowing designers to create multiple color modes.
+Alpha colors
+Variables
+Use alpha color variables to manage all white and black opacity fill colors in your designs 
+across light and dark modes. For more detail on how these variables are structured and 
+how to use them, please refer to our Introduction to variables.
+Name
+Light mode
+Dark mode
+alpha-white-10
+white 10%
+gray-950 10%
+alpha-white-20
+white 20%
+gray-950 20%
+alpha-white-30
+white 30%
+gray-950 30%
+alpha-white-40
+white 40%
+gray-950 40%
+alpha-white-50
+white 50%
+gray-950 50%
+alpha-white-60
+white 60%
+gray-950 60%
+alpha-white-70
+white 70%
+gray-950 70%
+alpha-white-80
+white 80%
+gray-950 80%
+alpha-white-90
+white 90%
+gray-950 90%
+alpha-white-100
+white 100%
+gray-950 100%
+alpha-black-10
+black 10%
+white 10%
+alpha-black-20
+black 20%
+white 20%
+alpha-black-30
+black 30%
+white 30%
+alpha-black-40
+black 40%
+white 40%
+alpha-black-50
+black 50%
+white 50%
+alpha-black-60
+black 60%
+white 60%
+alpha-black-70
+black 70%
+white 70%
+alpha-black-80
+black 80%
+white 80%
+alpha-black-90
+black 90%
+white 90%
+alpha-black-100
+black 100%
+white 100%
+Utility colors
+Variables
+Utility color variables are useful 
+˝backup˛ v variables for tricky or multicolor components 
+(e.g. badges) in your designs where semantic variables donˇt t fit perfectly. For more detail 
+on how these variables are structured and how to use them, please refer to our 
+Introduction to variables.
+Name
+Light mode
+Dark mode
+Name
+Light mode
+Dark mode
+utility-gray-50
+gray-50
+gray-900
+utility-blue-50
+blue-50
+blue-950
+utility-gray-100
+gray-100
+gray-800
+utility-blue-100
+blue-100
+blue-900
+utility-gray-200
+gray-200
+gray-700
+utility-blue-200
+blue-200
+blue-800
+utility-gray-300
+gray-300
+gray-700
+utility-blue-300
+blue-300
+blue-700
+utility-gray-400
+gray-400
+gray-600
+utility-blue-400
+blue-400
+blue-600
+utility-gray-500
+gray-500
+gray-500
+utility-blue-500
+blue-500
+blue-500
+utility-gray-600
+gray-600
+gray-400
+utility-blue-600
+blue-600
+blue-400
+utility-gray-700
+gray-700
+gray-300
+utility-blue-700
+blue-700
+blue-300
+utility-gray-800
+gray-800
+gray-200
+utility-blue-dark-50
+blue-dark-50
+blue-dark-950
+utility-gray-900
+gray-900
+gray-100
+utility-blue-dark-100
+blue-dark-100
+blue-dark-900
+utility-brand-50
+brand-50
+brand-950
+utility-blue-dark-200
+blue-dark-200
+blue-dark-800
+utility-brand-50_alt
+brand-50
+gray-900
+utility-blue-dark-300
+blue-dark-300
+blue-dark-700
+utility-brand-100
+brand-100
+brand-900
+utility-blue-dark-400
+blue-dark-400
+blue-dark-600
+utility-brand-100_alt
+brand-100
+gray-800
+utility-blue-dark-500
+blue-dark-500
+blue-dark-500
+utility-brand-200
+brand-200
+brand-800
+utility-blue-dark-600
+blue-dark-600
+blue-dark-400
+utility-brand-200_alt
+brand-200
+gray-700
+utility-blue-dark-700
+blue-dark-700
+blue-dark-300
+utility-brand-300
+brand-300
+brand-700
+utility-indigo-50
+indigo-50
+indigo-950
+utility-brand_alt
+brand-300
+gray-700
+utility-indigo-100
+indigo-100
+indigo-900
+utility-brand-400
+brand-400
+brand-600
+utility-indigo-200
+indigo-200
+indigo-800
+utility-brand-400_alt
+brand-400
+gray-600
+utility-indigo-300
+indigo-300
+indigo-700
+utility-brand-500
+brand-500
+brand-500
+utility-indigo-400
+indigo-400
+indigo-600
+utility-brand-500_alt
+brand-500
+gray-500
+utility-indigo-500
+indigo-500
+indigo-500
+utility-brand-600
+brand-600
+brand-400
+utility-indigo-600
+indigo-600
+indigo-400
+utility-brand-600_alt
+brand-600
+gray-400
+utility-indigo-700
+indigo-700
+indigo-300
+utility-brand-700
+brand-700
+brand-300
+utility-purple-50
+purple-50
+purple-950
+utility-brand-700_alt
+brand-700
+gray-300
+utility-purple-100
+purple-100
+purple-900
+utility-brand-800
+brand-800
+brand-200
+utility-purple-200
+purple-200
+purple-800
+utility-brand-800_alt
+brand-800
+gray-200
+utility-purple-300
+purple-300
+purple-700
+utility-brand-900
+brand-900
+brand-100
+utility-purple-400
+purple-400
+purple-600
+utility-brand-900_alt
+brand-900
+gray-100
+utility-purple-500
+purple-500
+purple-500
+utility-error-50
+error-50
+error-950
+utility-purple-600
+purple-600
+purple-400
+utility-error-100
+error-100
+error-900
+utility-purple-700
+purple-700
+purple-300
+utility-error-200
+error-200
+error-800
+utility-fuchsia-50
+fuchsia-50
+fuchsia-950
+utility-error-300
+error-300
+error-700
+utility-fuchsia-100
+fuchsia-100
+fuchsia-900
+utility-error-400
+error-400
+error-600
+utility-fuchsia-200
+fuchsia-200
+fuchsia-800
+utility-error-500
+error-500
+error-500
+utility-fuchsia-300
+fuchsia-300
+fuchsia-700
+utility-error-600
+error-600
+error-400
+utility-fuchsia-400
+fuchsia-400
+fuchsia-600
+utility-error-700
+error-700
+error-300
+utility-fuchsia-500
+fuchsia-500
+fuchsia-500
+utility-warning-50
+warning-50
+warning-950
+utility-fuchsia-600
+fuchsia-600
+fuchsia-400
+utility-warning-100
+warning-100
+warning-900
+utility-fuchsia-700
+fuchsia-700
+fuchsia-300
+utility-warning-200
+warning-200
+warning-800
+utility-pink-50
+pink-50
+pink-950
+utility-warning-300
+warning-300
+warning-700
+utility-pink-100
+pink-100
+pink-900
+utility-warning-400
+warning-400
+warning-600
+utility-pink-200
+pink-200
+pink-800
+utility-warning-500
+warning-500
+warning-500
+utility-pink-300
+pink-300
+pink-700
+utility-warning-600
+warning-600
+warning-400
+utility-pink-400
+pink-400
+pink-600
+utility-warning-700
+warning-700
+warning-300
+utility-pink-500
+pink-500
+pink-500
+utility-success-50
+success-50
+success-950
+utility-pink-600
+pink-600
+pink-400
+utility-success-100
+success-100
+success-900
+utility-pink-700
+pink-700
+pink-300
+utility-success-200
+success-200
+success-800
+utility-orange-dark-50
+orange-dark-50
+orange-dark-950
+utility-success-300
+success-300
+success-700
+utility-orange-dark-100
+orange-dark-100
+orange-dark-900
+utility-success-400
+success-400
+success-600
+utility-orange-dark-200
+orange-dark-200
+orange-dark-800
+utility-success-500
+success-500
+success-500
+utility-orange-dark-300
+orange-dark-300
+orange-dark-700
+utility-success-600
+success-600
+success-400
+utility-orange-dark-400
+orange-dark-400
+orange-dark-600
+utility-success-700
+success-700
+success-300
+utility-orange-dark-500
+orange-dark-500
+orange-dark-500
+utility-gray-blue-50
+gray-blue-50
+gray-blue-950
+utility-orange-dark-600
+orange-dark-600
+orange-dark-400
+utility-gray-blue-100
+gray-blue-100
+gray-blue-900
+utility-orange-dark-700
+orange-dark-700
+orange-dark-300
+utility-gray-blue-200
+gray-blue-200
+gray-blue-800
+utility-orange-50
+orange-50
+orange-950
+utility-gray-blue-300
+gray-blue-300
+gray-blue-700
+utility-orange-100
+orange-100
+orange-900
+utility-gray-blue-400
+gray-blue-400
+gray-blue-600
+utility-orange-200
+orange-200
+orange-800
+utility-gray-blue-500
+gray-blue-500
+gray-blue-500
+utility-orange-300
+orange-300
+orange-700
+utility-gray-blue-600
+gray-blue-600
+gray-blue-400
+utility-orange-400
+orange-400
+orange-600
+utility-gray-blue-700
+gray-blue-700
+gray-blue-300
+utility-orange-500
+orange-500
+orange-500
+utility-blue-light-50
+blue-light-50
+blue-light-950
+utility-orange-600
+orange-600
+orange-400
+utility-blue-light-100
+blue-light-100
+blue-light-900
+utility-orange-700
+orange-700
+orange-300
+utility-blue-light-200
+blue-light-200
+blue-light-800
+utility-blue-light-300
+blue-light-300
+blue-light-700
+utility-blue-light-400
+blue-light-400
+blue-light-600
+utility-blue-light-500
+blue-light-500
+blue-light-500
+utility-blue-light-600
+blue-light-600
+blue-light-400
+utility-blue-light-700
+blue-light-700
+blue-light-300

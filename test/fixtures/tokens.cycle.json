@@ -1,0 +1,1 @@
+{ "meta": { "autoMirrorDark": false }, "scales": { "brand": { "600": { "light": "#6941C6", "dark": "#6941C6" } } }, "semantic": {}, "base": { "a": { "light": "{base.b}", "dark": "{base.b}" }, "b": { "light": "{base.a}", "dark": "{base.a}" } } }

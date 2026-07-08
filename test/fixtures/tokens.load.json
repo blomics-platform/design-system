@@ -1,0 +1,6 @@
+{
+  "meta": { "autoMirrorDark": false },
+  "scales": { "brand": { "500": { "light": "#7F56D9", "dark": "#7F56D9" }, "600": { "light": "#6941C6", "dark": "#6941C6" } } },
+  "semantic": {},
+  "base": { "white": { "light": "#FFFFFF", "dark": "#FFFFFF" }, "text-primary": { "light": "{scales.brand.600}", "dark": "{scales.brand.500}" } }
+}

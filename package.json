@@ -1,0 +1,49 @@
+{
+  "name": "@blomics-platform/design-system",
+  "version": "0.3.0",
+  "private": false,
+  "type": "module",
+  "description": "Untitled UI color token generator for Tailwind v4 — scaffold tokens, set your brand ramp, generate theme.css + typed token names.",
+  "license": "MIT",
+  "author": "Blomics",
+  "homepage": "https://github.com/blomics-platform/design-system#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/blomics-platform/design-system.git" },
+  "bugs": { "url": "https://github.com/blomics-platform/design-system/issues" },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "tailwindcss",
+    "tailwind-v4",
+    "untitled-ui",
+    "css-variables",
+    "color-tokens",
+    "dark-mode",
+    "oklch",
+    "generator"
+  ],
+  "engines": { "node": ">=18" },
+  "files": [
+    "bin",
+    "src",
+    "tokens.json",
+    "design.config.json",
+    "tokens.schema.json",
+    "config.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": { "ds": "./bin/ds.mjs" },
+  "exports": {
+    ".": { "import": "./src/index.mjs" },
+    "./config-schema": "./config.schema.json",
+    "./tokens-schema": "./tokens.schema.json"
+  },
+  "scripts": {
+    "build": "node ./bin/ds.mjs build",
+    "check": "node ./bin/ds.mjs build --check",
+    "test": "node --test",
+    "prepublishOnly": "node --test"
+  },
+  "publishConfig": { "access": "public" },
+  "peerDependencies": { "tailwindcss": ">=4.1.0" }
+}

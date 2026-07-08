@@ -1,0 +1,124 @@
+{
+  "sourceHash": "c4ede6b54d5225f47d194c5525e013b998ee8fe304c04daca57f9228d6b50562",
+  "generator": "@blomics-platform/design-system",
+  "version": "0.2.0",
+  "darkSelector": "[data-gnb-theme=\"dark\"]",
+  "primitives": {
+    "ramps": [
+      "brand",
+      "gray",
+      "error"
+    ],
+    "steps": [
+      "25",
+      "50",
+      "100",
+      "200",
+      "300",
+      "400",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900",
+      "950"
+    ]
+  },
+  "colorVars": {
+    "light": [
+      "--color-alpha-black-50",
+      "--color-bg-brand-solid",
+      "--color-bg-brand-solid_hover",
+      "--color-bg-primary",
+      "--color-black",
+      "--color-border-error",
+      "--color-brand-100",
+      "--color-brand-200",
+      "--color-brand-300",
+      "--color-brand-400",
+      "--color-brand-50",
+      "--color-brand-500",
+      "--color-brand-600",
+      "--color-brand-700",
+      "--color-brand-800",
+      "--color-brand-900",
+      "--color-brand-950",
+      "--color-error-300",
+      "--color-error-400",
+      "--color-fg-primary",
+      "--color-gray-300",
+      "--color-gray-50",
+      "--color-gray-700",
+      "--color-gray-900",
+      "--color-text-primary",
+      "--color-text-white",
+      "--color-utility-gray-50",
+      "--color-white"
+    ],
+    "dark": [
+      "--color-alpha-black-50",
+      "--color-bg-brand-solid",
+      "--color-bg-brand-solid_hover",
+      "--color-bg-primary",
+      "--color-black",
+      "--color-border-error",
+      "--color-brand-100",
+      "--color-brand-200",
+      "--color-brand-300",
+      "--color-brand-400",
+      "--color-brand-50",
+      "--color-brand-500",
+      "--color-brand-600",
+      "--color-brand-700",
+      "--color-brand-800",
+      "--color-brand-900",
+      "--color-brand-950",
+      "--color-error-300",
+      "--color-error-400",
+      "--color-fg-primary",
+      "--color-gray-300",
+      "--color-gray-50",
+      "--color-gray-700",
+      "--color-gray-900",
+      "--color-text-primary",
+      "--color-text-white",
+      "--color-utility-gray-50",
+      "--color-white"
+    ]
+  },
+  "roleTokens": {
+    "text": [
+      "text-white",
+      "text-primary"
+    ],
+    "bg": [
+      "bg-primary",
+      "bg-brand-solid",
+      "bg-brand-solid_hover"
+    ],
+    "border": [
+      "border-error"
+    ],
+    "fg": [
+      "fg-primary"
+    ]
+  },
+  "utilityTokens": [
+    "utility-gray-50"
+  ],
+  "alphaTokens": [
+    "alpha-black-50"
+  ],
+  "utilities": {
+    "text-primary": "--color-text-primary",
+    "bg-primary": "--color-bg-primary",
+    "bg-brand-solid": "--color-bg-brand-solid",
+    "bg-brand-solid_hover": "--color-bg-brand-solid_hover",
+    "border-error": "--color-border-error",
+    "fg-primary": "--color-fg-primary",
+    "bg-utility-gray-50": "--color-utility-gray-50",
+    "text-utility-gray-50": "--color-utility-gray-50",
+    "bg-alpha-black-50": "--color-alpha-black-50",
+    "text-alpha-black-50": "--color-alpha-black-50"
+  }
+}

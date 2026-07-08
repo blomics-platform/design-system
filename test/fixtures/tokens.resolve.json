@@ -1,0 +1,21 @@
+{
+  "meta": { "autoMirrorDark": false },
+  "scales": {
+    "gray":  { "50": { "light": "#F9FAFB", "dark": "#F5F5F6" }, "900": { "light": "#101828", "dark": "#161B26" }, "950": { "light": "#0C111D", "dark": "#0C111D" } },
+    "error": { "300": { "light": "#FDA29B", "dark": "#FDA29B" }, "400": { "light": "#F97066", "dark": "#F97066" } },
+    "brand": { "500": { "light": "#7F56D9", "dark": "#7F56D9" }, "600": { "light": "#6941C6", "dark": "#6941C6" }, "700": { "light": "#53389E", "dark": "#53389E" } }
+  },
+  "semantic": {},
+  "base": {
+    "white": { "light": "#FFFFFF", "dark": "#FFFFFF" },
+    "black": { "light": "#000000", "dark": "#000000" },
+    "text-white": { "light": "#FFFFFF", "dark": "#FFFFFF" },
+    "text-primary": { "light": "{scales.gray.900}", "dark": "{scales.gray.50}" },
+    "bg-primary": { "light": "{base.white}", "dark": "{scales.gray.950}" },
+    "bg-brand-solid": { "light": "{scales.brand.600}", "dark": "{scales.brand.600}" },
+    "border-error": { "light": "{scales.error.300}", "dark": "{scales.error.400}" },
+    "fg-primary": { "light": "{scales.gray.900}", "dark": "{base.white}" },
+    "utility-brand-600_alt": { "light": "{scales.brand.600}", "dark": "{scales.gray.900}" },
+    "ring": { "light": "{base.bg-brand-solid}", "dark": "{base.bg-brand-solid}" }
+  }
+}
