@@ -71,7 +71,7 @@ export function validate(tokens, config, schemas) {
   if (tokens.base) for (const k of Object.keys(tokens.base)) {
     if (k === "white" || k === "black" || k === "text-white") continue; // 앵커 + text-white 화이트리스트(@utility 미발행)
     if (/^(text|bg|border|fg)-/.test(k)) claimUtil(k, `base.${JSON.stringify(k)}`);
-    else if (/^(utility|alpha)-/.test(k)) { claimUtil(`bg-${k}`, `base.${JSON.stringify(k)}`); claimUtil(`text-${k}`, `base.${JSON.stringify(k)}`); }
+    else if (/^(utility|alpha)-/.test(k)) { claimUtil(`bg-${k}`, `base.${JSON.stringify(k)}`); claimUtil(`text-${k}`, `base.${JSON.stringify(k)}`); claimUtil(`border-${k}`, `base.${JSON.stringify(k)}`); }
   }
 
   // Brand 필수 스텝 프리플라이트 (§4.3): brand 램프가 있으면 50..950 전부 필요.

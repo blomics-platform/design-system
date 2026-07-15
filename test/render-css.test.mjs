@@ -119,6 +119,32 @@ test("(7) @utility prefix->property; utility/alpha get bg- and text-", () => {
   has(/@utility\s+text-alpha-black-50\s*\{\s*color:\s*var\(--color-alpha-black-50\)\s*;\s*\}/);
 });
 
+// (7c) utility-*/alpha-* ALSO emit border-*: 배지처럼 tint 배경 + 같은 계열 보더를 쓰는 조합이
+// 흔한데, border-utility-* 가 없어서 소비자가 border-[var(--color-utility-*)] arbitrary 로
+// 우회하고 있었다. bg-/text- 와 대칭이 되도록 border- 도 낸다.
+test("(7c) utility/alpha also emit border-*", () => {
+  const css = renderCss(resolvedLight, resolvedDark, config, sourceHash);
+  const has = (re) => assert.ok(re.test(css), re.toString());
+  has(/@utility\s+border-utility-brand-600\s*\{\s*border-color:\s*var\(--color-utility-brand-600\)\s*;\s*\}/);
+  has(/@utility\s+border-alpha-black-50\s*\{\s*border-color:\s*var\(--color-alpha-black-50\)\s*;\s*\}/);
+});
+
+// (7b) border-* roles ALSO emit divide-* so `divide-y divide-<role>` colors the divider.
+// Tailwind의 divide-y/x 는 자식(:not(:last-child))에 보더 '폭'만 준다. 색은 divide-<color>
+// 유틸이 주는데, 역할 토큰엔 그게 없어서 지금까지 currentColor 로 폴백했다(다크에서 흰 줄).
+// 따라서 divide-* 는 컨테이너가 아니라 '자식'을 칠해야 한다.
+test("(7b) border-* roles also emit divide-* targeting children", () => {
+  const css = renderCss(resolvedLight, resolvedDark, config, sourceHash);
+  has_divide: {
+    const re = /@utility\s+divide-error\s*\{\s*&\s*>\s*:not\(:last-child\)\s*\{\s*border-color:\s*var\(--color-border-error\)\s*;\s*\}\s*\}/;
+    assert.ok(re.test(css), `divide-error must color children: ${re}`);
+  }
+  // 역할이 아닌 것에서는 divide-* 를 만들지 않는다(divide 는 보더 색 개념이라 border-* 만 대상).
+  assert.ok(!/@utility\s+divide-primary\b/.test(css), "text-primary must not produce divide-primary");
+  assert.ok(!/@utility\s+divide-brand-solid\b/.test(css), "bg-brand-solid must not produce divide-brand-solid");
+  assert.ok(!/@utility\s+divide-utility-brand-600\b/.test(css), "utility-* must not produce divide-*");
+});
+
 // (8) NO @utility text-white, but --color-text-white var IS present
 test("(8) no @utility text-white, but --color-text-white var present", () => {
   const css = renderCss(resolvedLight, resolvedDark, config, sourceHash);

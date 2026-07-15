@@ -20,8 +20,8 @@ test("seed-shape: gray-dark is absorbed (not its own scale), brand is present", 
   assert.ok(tokens.scales.brand, "brand scale must be present");
 });
 
-test("seed-shape: 240 base entries, semantic is {}", () => {
-  assert.equal(Object.keys(tokens.base).length, 240);
+test("seed-shape: 256 base entries, semantic is {}", () => {
+  assert.equal(Object.keys(tokens.base).length, 256);
   assert.deepEqual(tokens.semantic, {});
 });
 
@@ -36,11 +36,11 @@ test("seed-shape: brand ramp has all steps 50..950", () => {
   }
 });
 
-test("seed-shape: resolveRefs both modes resolve 588 keys with no throw", () => {
+test("seed-shape: resolveRefs both modes resolve 604 keys with no throw", () => {
   const L = resolveRefs(tokens, "light");
   const D = resolveRefs(tokens, "dark");
-  assert.equal(Object.keys(L).length, 588);
-  assert.equal(Object.keys(D).length, 588);
+  assert.equal(Object.keys(L).length, 604);
+  assert.equal(Object.keys(D).length, 604);
 });
 
 test("seed-shape: resolveRefs spot values (text-primary, fg-primary, border-error)", () => {

@@ -20,13 +20,20 @@ function primitiveOrder(keys) {
 const declLines = (keys, map) => keys.map((k) => "  --color-" + k + ": " + map[k] + ";");
 
 function utilRule(className, prop, varKey) { return `@utility ${className} { ${prop}: var(--color-${varKey}); }`; }
+// Tailwind 의 divide-y/divide-x 는 자식(:not(:last-child))에 보더 '폭'만 준다. 색은 divide-<color>
+// 유틸 몫인데 역할 토큰에는 그게 없어 currentColor 로 폴백한다(다크 배경에 흰 줄). 그래서
+// border-<role> 마다 짝이 되는 divide-<role> 을 내되, 컨테이너가 아니라 자식을 칠한다.
+function divideRule(role, varKey) { return `@utility divide-${role} { & > :not(:last-child) { border-color: var(--color-${varKey}); } }`; }
 function emitUtilities(roleUtilKeys) {
   const out = [];
   for (const k of roleUtilKeys) {
     if (UTILITY_SKIP.has(k)) continue;
-    if (k.startsWith("utility-") || k.startsWith("alpha-")) { out.push(utilRule("bg-" + k, "background-color", k)); out.push(utilRule("text-" + k, "color", k)); continue; }
+    // utility-*/alpha-* 는 역할이 아니라 팔레트라 어느 속성에 쓸지 정해져 있지 않다 → 세 속성 모두 발행.
+    // border- 는 tint 배경 + 동계열 보더(배지 등) 조합 때문에 필요하다.
+    if (k.startsWith("utility-") || k.startsWith("alpha-")) { out.push(utilRule("bg-" + k, "background-color", k)); out.push(utilRule("text-" + k, "color", k)); out.push(utilRule("border-" + k, "border-color", k)); continue; }
     const prefix = ROLE_PREFIXES.find((p) => k.startsWith(p));
     out.push(utilRule(k, ROLE_PROP[prefix], k));
+    if (prefix === "border-") out.push(divideRule(k.slice("border-".length), k));
   }
   return out;
 }

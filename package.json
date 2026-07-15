@@ -1,6 +1,6 @@
 {
   "name": "@blomics-platform/design-system",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "private": false,
   "type": "module",
   "description": "Untitled UI color token generator for Tailwind v4 — scaffold tokens, set your brand ramp, generate theme.css + typed token names.",

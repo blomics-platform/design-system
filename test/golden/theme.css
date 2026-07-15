@@ -60,8 +60,11 @@
 @utility bg-brand-solid { background-color: var(--color-bg-brand-solid); }
 @utility bg-brand-solid_hover { background-color: var(--color-bg-brand-solid_hover); }
 @utility border-error { border-color: var(--color-border-error); }
+@utility divide-error { & > :not(:last-child) { border-color: var(--color-border-error); } }
 @utility fg-primary { color: var(--color-fg-primary); }
 @utility bg-utility-gray-50 { background-color: var(--color-utility-gray-50); }
 @utility text-utility-gray-50 { color: var(--color-utility-gray-50); }
+@utility border-utility-gray-50 { border-color: var(--color-utility-gray-50); }
 @utility bg-alpha-black-50 { background-color: var(--color-alpha-black-50); }
 @utility text-alpha-black-50 { color: var(--color-alpha-black-50); }
+@utility border-alpha-black-50 { border-color: var(--color-alpha-black-50); }
